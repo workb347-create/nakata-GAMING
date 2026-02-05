@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nakata Gaming</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <h1>Nakata Gaming</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="shop.html">Shop</a>
+            <a href="cart.html">Cart</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
+
+    <main>
+        <h2>Welcome to Nakata Gaming</h2>
+        <p>Your ultimate PC gaming gear marketplace. All products are directly from Jumia.</p>
+
+        <section class="products">
+            <div class="product-card">
+                <img src="images/keyboard.jpg" alt="Keyboard">
+                <h3>Gaming Keyboard</h3>
+                <p>$50</p>
+                <button onclick="addToCart('Gaming Keyboard', 50)">Add to Cart</button>
+            </div>
+
+            <div class="product-card">
+                <img src="images/mouse.jpg" alt="Mouse">
+                <h3>Gaming Mouse</h3>
+                <p>$35</p>
+                <button onclick="addToCart('Gaming Mouse', 35)">Add to Cart</button>
+            </div>
+
+            <div class="product-card">
+                <img src="images/headset.jpg" alt="Headset">
+                <h3>Gaming Headset</h3>
+                <p>$60</p>
+                <button onclick="addToCart('Gaming Headset', 60)">Add to Cart</button>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Nakata Gaming | Email: nakatagaming@example.com | WhatsApp: +212600000000 | Instagram: @nakatagaming</p>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

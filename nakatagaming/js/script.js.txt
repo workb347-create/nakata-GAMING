@@ -1,0 +1,48 @@
+// مصفوفة باش نخزنو المنتجات في Cart
+let cart = [];
+
+// تابع لإضافة منتج للكارت
+function addToCart(productName, productPrice) {
+    // إنشاء منتج جديد
+    const product = {
+        name: productName,
+        price: productPrice
+    };
+    
+    // إضافة المنتج للمصفوفة
+    cart.push(product);
+    
+    // حفظ الكارت في localStorage باش يبقى حتى من بعد إعادة تحميل الصفحة
+    localStorage.setItem('cart', JSON.stringify(cart));
+    
+    // رسالة للمستخدم
+    alert(productName + " has been added to your cart!");
+}
+
+// تابع لعرض الكارت في صفحة Cart
+function displayCart() {
+    // جلب الكارت من localStorage
+    const storedCart = JSON.parse(localStorage.getItem('cart')) || [];
+    
+    const cartContainer = document.getElementById('cart-items');
+    const totalPriceContainer = document.getElementById('total-price');
+    
+    cartContainer.innerHTML = ""; // مسح أي شيء موجود
+    
+    let total = 0;
+    
+    storedCart.forEach(item => {
+        const div = document.createElement('div');
+        div.className = 'cart-item';
+        div.innerHTML = <p>${item.name} - $${item.price}</p>;
+        cartContainer.appendChild(div);
+        total += item.price;
+    });
+    
+    totalPriceContainer.textContent = "Total: $" + total;
+}
+
+// تنفيذ displayCart تلقائياً في صفحة Cart
+if (document.getElementById('cart-items')) {
+    displayCart();
+}
